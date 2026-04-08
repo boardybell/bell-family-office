@@ -27,13 +27,16 @@
       white-space: nowrap;
     }
     .contact-link:hover { color: #dfc08a; }
+    area { outline: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <img src="hero.png" alt="Bell Family Estate — Jackson Hole, Wyoming" />
-    <a href="index.html" style="position:absolute;top:0;left:20%;width:60%;height:32%;display:block;" aria-label="Bell Family Office home"></a>
+    <img src="hero.png" alt="Bell Family Estate — Jackson Hole, Wyoming" usemap="#homelink" />
     <a class="contact-link" href="contact.html">Contact</a>
   </div>
+  <map name="homelink">
+    <area shape="rect" coords="0,0,1024,538" href="#" alt="Bell Family Office — Home" />
+  </map>
 </body>
 </html>

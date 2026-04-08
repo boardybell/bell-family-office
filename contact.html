@@ -38,16 +38,21 @@
       color: #c9a96e;
       text-decoration: none;
     }
+    .overlay a:hover { color: #dfc08a; }
+    area { outline: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <img src="contact.png" alt="Bell Family Office" />
-    <a href="index.html" style="position:absolute;top:0;left:20%;width:60%;height:32%;display:block;" aria-label="Bell Family Office home"></a>
+    <img src="contact.png" alt="Bell Family Office" usemap="#homelink" />
     <div class="overlay">
       <p>For inquiries, please reach us directly.</p>
       <a href="mailto:externalinquiries@bellfamilyoffice.com">externalinquiries@bellfamilyoffice.com</a>
+      <!-- Phone: [placeholder] -->
     </div>
   </div>
+  <map name="homelink">
+    <area shape="rect" coords="0,0,1024,538" href="index.html" alt="Bell Family Office — Home" />
+  </map>
 </body>
 </html>
