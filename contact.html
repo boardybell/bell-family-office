@@ -6,47 +6,46 @@
   <title>Contact — Bell Family Office</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; padding: 0; background: #1a1714; }
     .wrap { position: relative; }
     .wrap img { width: 100%; display: block; }
-    .contact-block {
+    .overlay {
       position: absolute;
-      bottom: 14%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      white-space: nowrap;
+      top: 37%;
+      left: 0;
+      width: 100%;
+      height: 36%;
+      background: #3a4248;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75em;
     }
-    .contact-block p {
+    .overlay p {
+      margin: 0;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(0.8rem, 1.8vw, 1rem);
-      font-weight: 300;
       font-style: italic;
+      font-size: 1.1rem;
       color: #c9a96e;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.6em;
     }
-    .contact-block a {
-      font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(0.72rem, 1.5vw, 0.88rem);
-      font-weight: 300;
-      letter-spacing: 0.14em;
+    .overlay a {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1rem;
       color: #c9a96e;
       text-decoration: none;
     }
-    .contact-block a:hover { color: #dfc08a; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <img src="hero.png" alt="Bell Family Estate — Jackson Hole, Wyoming" />
-    <div class="contact-block">
+    <img src="contact.png" alt="Bell Family Office" />
+    <div class="overlay">
       <p>For inquiries, please reach us directly.</p>
       <a href="mailto:externalinquiries@bellfamilyoffice.com">externalinquiries@bellfamilyoffice.com</a>
-      <!-- Phone: [placeholder] -->
     </div>
   </div>
 </body>
