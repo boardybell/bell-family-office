@@ -4,9 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bell Family Office</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: #1a1714; }
+    .wrap { position: relative; }
+    .wrap img { width: 100%; display: block; }
+    .contact-link {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+      font-variant: small-caps;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: #c9a96e;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .contact-link:hover { color: #dfc08a; }
+  </style>
 </head>
-<body class="full-bg">
-  <a class="contact-link" href="contact.html">Contact</a>
+<body>
+  <div class="wrap">
+    <img src="hero.png" alt="Bell Family Estate — Jackson Hole, Wyoming" />
+    <a class="contact-link" href="contact.html">Contact</a>
+  </div>
 </body>
 </html>
