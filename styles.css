@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cormorant+SC:wght@300;400&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -6,186 +6,89 @@
   padding: 0;
 }
 
-:root {
-  --gold: #c9a96e;
-  --gold-light: #dfc08a;
-  --gold-dim: #9e7d4e;
-  --bg: #1a1714;
-  --bg-texture: #1e1b18;
-  --text: #c9a96e;
-  --text-muted: #9e7d4e;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  background-color: var(--bg);
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  color: var(--gold);
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+body.full-bg {
   min-height: 100vh;
+  height: 100vh;
+  background: #1a1714 url('hero.png') center center / cover no-repeat;
   display: flex;
-  flex-direction: column;
-}
-
-/* ── Divider ── */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
-  opacity: 0.6;
-}
-
-.divider-short {
-  width: 200px;
-  margin: 0 auto;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-  opacity: 0.7;
-}
-
-/* ── Header ── */
-header {
-  text-align: center;
-  padding: 3rem 2rem 2.5rem;
-}
-
-.crest {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1.8rem;
-  display: block;
-}
-
-.site-title {
-  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
-.tagline {
-  margin-top: 0.75rem;
-  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-  font-weight: 300;
-  letter-spacing: 0.3em;
-  color: var(--gold-dim);
-  text-transform: uppercase;
-}
-
-/* ── Nav ── */
-nav {
-  text-align: center;
-  padding: 1.2rem 2rem;
-}
-
-nav a {
-  color: var(--gold-dim);
-  text-decoration: none;
-  font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: var(--gold-light);
-}
-
-/* ── Hero image ── */
-.hero {
-  width: 100%;
-  height: clamp(320px, 55vw, 620px);
-  overflow: hidden;
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
-  display: block;
-}
-
-/* ── Footer ── */
-footer {
-  margin-top: auto;
-  text-align: center;
-  padding: 2rem 2rem 2.5rem;
-}
-
-.location {
-  font-style: italic;
-  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  color: var(--gold-dim);
-  margin-top: 1.5rem;
-}
-
-/* ── Contact page body ── */
-.contact-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 3rem 2rem 2rem;
-  text-align: center;
 }
 
-.contact-block {
-  max-width: 500px;
-  width: 100%;
+/* ── Index: CONTACT link ── */
+.contact-link {
+  display: block;
+  margin-bottom: 6.5vh;
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.contact-link:hover {
+  opacity: 1;
+}
+
+/* ── Contact page: dark panel in center ── */
+.contact-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1714;
+  padding: 3rem 3.5rem;
+  text-align: center;
+  width: min(480px, 88vw);
 }
 
 .contact-intro {
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 300;
-  letter-spacing: 0.05em;
-  color: var(--gold-dim);
+  font-style: italic;
+  color: #9e7d4e;
+  letter-spacing: 0.04em;
   line-height: 1.7;
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 }
 
 .contact-email {
-  display: block;
-  font-family: 'Cormorant SC', Georgia, serif;
-  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+  font-weight: 300;
   letter-spacing: 0.12em;
-  color: var(--gold);
+  color: #c9a96e;
   text-decoration: none;
-  border-bottom: 1px solid var(--gold-dim);
+  border-bottom: 1px solid #9e7d4e;
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
 
 .contact-email:hover {
-  color: var(--gold-light);
-  border-color: var(--gold-light);
+  color: #dfc08a;
+  border-color: #dfc08a;
 }
 
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  header {
-    padding: 2rem 1.5rem 2rem;
-  }
+/* ── Contact page: back link ── */
+.back-link {
+  display: block;
+  margin-bottom: 6.5vh;
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
 
-  .crest {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1.4rem;
-  }
-
-  .hero {
-    height: 260px;
-  }
+.back-link:hover {
+  opacity: 1;
 }
