@@ -1,0 +1,326 @@
+/* NOCTURNE — XXVII. Warm espresso black. Candlelit register.
+   Chamber's warmth pushed further. Spectral body. Deeper amber.
+   Long measure, generous leading. Reading by firelight.
+   Reference: private letter, midnight dispatch. */
+
+:root {
+  --paper:  #130E09;
+  --ink:    #EAE4D8;
+  --accent: #9C7B3A;
+  --warm:   #857B6A;
+  --faint:  #4E4840;
+  --rule:   #241D15;
+  --light:  #1A1410;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 19px;
+  line-height: 2.0;
+  font-feature-settings: "onum" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Masthead ─────────────────────────────────────── */
+.pnc-masthead {
+  padding: 56px 64px 48px;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+
+.pnc-masthead-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.pnc-masthead-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+}
+
+.pnc-masthead-meta {
+  text-align: right;
+  padding-bottom: 8px;
+}
+
+.pnc-masthead-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.pnc-masthead-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pnc-masthead-nav a:hover { color: var(--accent); }
+
+.pnc-masthead-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-top: 12px;
+}
+
+/* ── Wrap ─────────────────────────────────────────── */
+.pnc-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 64px 120px;
+}
+
+.pnc-rule { border: none; border-top: 1px solid var(--rule); margin: 72px 0; }
+
+/* ── Nav (inner pages) ────────────────────────────── */
+.pnc-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pnc-nav-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pnc-nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.pnc-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pnc-nav-links a:hover { color: var(--accent); }
+
+/* ── Section label ────────────────────────────────── */
+.pnc-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* ── Intro ────────────────────────────────────────── */
+.pnc-intro { max-width: 740px; margin: 80px 0; }
+.pnc-intro p { font-size: 20px; line-height: 2.0; }
+
+/* ── Writing cards ────────────────────────────────── */
+.pnc-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+}
+
+.pnc-card {
+  background: var(--light);
+  padding: 40px 36px 48px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: background 200ms;
+}
+.pnc-card:hover { background: #221A12; }
+
+.pnc-card-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pnc-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  display: block;
+  color: var(--ink);
+}
+
+.pnc-card-deck {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--warm);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.pnc-card-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+/* ── Text pages ───────────────────────────────────── */
+.pnc-text-page { padding-top: 72px; max-width: 700px; }
+.pnc-text-page h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 52px;
+}
+.pnc-text-page h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  margin-top: 52px;
+  margin-bottom: 16px;
+}
+.pnc-text-page p { margin-bottom: 1.6em; }
+
+.pnc-contact { padding-top: 72px; max-width: 560px; }
+.pnc-contact h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; font-weight: 400; margin-bottom: 48px; }
+.pnc-contact p { margin-bottom: 1.6em; color: var(--warm); font-size: 17px; }
+.pnc-contact a { color: var(--accent); }
+
+/* ── Writing inline ───────────────────────────────── */
+.pnc-writing-page { padding-top: 72px; }
+
+.pnc-toc {
+  margin-bottom: 88px;
+  padding: 32px 36px;
+  background: var(--light);
+  border-left: 2px solid var(--accent);
+}
+
+.pnc-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm);
+  cursor: pointer;
+  list-style: none;
+}
+.pnc-toc[open] summary { margin-bottom: 24px; }
+
+.pnc-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 36px;
+}
+
+.pnc-toc-links a {
+  font-size: 15px;
+  color: var(--warm);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.pnc-toc-links a:hover { color: var(--ink); }
+
+.pnc-article {
+  max-width: 740px;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pnc-article:first-child { padding-top: 0; }
+.pnc-article:last-child { border-bottom: none; }
+
+.pnc-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.pnc-article-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.pnc-article-deck { font-style: italic; font-size: 18px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.pnc-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 44px; display: block; }
+.pnc-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.6em; }
+.pnc-article-body p { margin-bottom: 1.6em; }
+.pnc-article-sign { margin-top: 2.5em; padding-top: 24px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.pnc-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────────── */
+.pnc-footer {
+  margin-top: 80px;
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .pnc-masthead { padding: 40px 28px 36px; }
+  .pnc-masthead-inner { flex-direction: column; gap: 24px; align-items: flex-start; }
+  .pnc-masthead-firm { font-size: 48px; }
+  .pnc-masthead-nav { align-items: flex-start; }
+  .pnc-masthead-meta { text-align: left; }
+  .pnc-wrap { padding: 0 28px 80px; }
+  .pnc-nav { padding: 28px; }
+  .pnc-writing-grid { grid-template-columns: 1fr; }
+  .pnc-toc-links { grid-template-columns: 1fr; }
+}

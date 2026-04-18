@@ -1,0 +1,150 @@
+:root {
+  --paper: #F4EEE0;
+  --ink: #0F0E0D;
+  --accent: #6B2C2A;
+  --tertiary: #4A443E;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.82;
+  font-feature-settings: "onum" 1;
+}
+.v-journal { max-width: 860px; margin: 0 auto; padding: 72px 56px 140px; }
+
+/* Full masthead */
+.masthead {
+  text-align: center;
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.masthead-top { font-size: 11px; letter-spacing: 0.12em; font-variant: small-caps; color: var(--tertiary); margin-bottom: 16px; }
+.site-name {
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+.masthead-sub { font-size: 11px; letter-spacing: 0.12em; font-variant: small-caps; color: var(--tertiary); }
+.issue-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 200pt;
+  color: var(--ink);
+  opacity: 0.04;
+  pointer-events: none;
+  line-height: 1;
+  z-index: -1;
+}
+.masthead-double-rule {
+  margin-top: 16px;
+  border-top: 2px solid var(--ink);
+  padding-top: 4px;
+  border-bottom: 0.5px solid var(--ink);
+  padding-bottom: 16px;
+}
+
+/* In this issue */
+.in-this-issue {
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  font-variant: small-caps;
+  color: var(--tertiary);
+  margin-bottom: 12px;
+}
+
+nav.main-nav { margin: 0 0 40px; }
+nav.main-nav a {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  font-variant: small-caps;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 200ms ease-out;
+}
+nav.main-nav a:hover { color: var(--accent); }
+
+.content-col { max-width: 680px; }
+
+/* Pull quote */
+.pull-quote {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 16px 0;
+  margin: 32px 0;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--tertiary);
+}
+
+/* Two-column writing index */
+.writing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+@media (max-width: 640px) { .writing-grid { grid-template-columns: 1fr; } }
+
+/* Colophon */
+.colophon {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 0.5px solid var(--tertiary);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--tertiary);
+  text-align: center;
+}
+
+h1 { font-family: 'Spectral', Georgia, serif; font-size: 28px; font-weight: 400; margin-bottom: 0.5em; }
+h2 { font-family: 'Spectral', Georgia, serif; font-size: 20px; font-weight: 400; margin-top: 2em; margin-bottom: 0.5em; }
+p { margin-bottom: 1.4em; }
+
+/* Cover image with parallax */
+.cover-image-wrap {
+  position: relative;
+  overflow: hidden;
+  max-height: 500px;
+  margin-bottom: 48px;
+}
+.cover-image-wrap img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cover-image-wrap img { will-change: transform; }
+}
+
+/* Scroll reveals */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+.folio {
+  margin-top: 80px;
+  padding-top: 12px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 0.5px solid var(--ink);
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--tertiary);
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms ease-out; }
+a:hover { color: var(--accent); }
+
+figcaption { font-size: 13px; color: var(--tertiary); margin-top: 8px; font-style: italic; }
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

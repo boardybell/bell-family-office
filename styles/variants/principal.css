@@ -1,0 +1,410 @@
+/* PRINCIPAL — Contemporary private bank register.
+   Full-bleed photography. Cormorant Garamond at scale. Maximum whitespace.
+   Reference: Pictet, Julius Baer, Brown Brothers Harriman. */
+
+:root {
+  --paper:    #F3F1EB;
+  --ink:      #151311;
+  --accent:   #1B3A52;
+  --tertiary: #7A7265;
+  --warm:     #6B5B45;
+  --rule:     #C9C5BC;
+  --white:    #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.88;
+  font-feature-settings: "onum" 1, "liga" 1, "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Site nav (used on inner pages) ───────────── */
+.pn-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.pn-nav-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pn-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.pn-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  text-decoration: none;
+}
+.pn-nav-links a:hover { color: var(--accent); }
+
+/* ── Hero ─────────────────────────────────────── */
+.pn-hero {
+  position: relative;
+  height: 88vh;
+  min-height: 580px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.pn-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.pn-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(10,8,6,0.08) 0%,
+    rgba(10,8,6,0.25) 50%,
+    rgba(10,8,6,0.72) 100%
+  );
+}
+
+.pn-hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.pn-hero-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+}
+
+.pn-hero-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.pn-hero-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pn-hero-nav-links a:hover { color: #fff; }
+
+.pn-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 56px 72px;
+  max-width: 900px;
+}
+
+.pn-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.pn-hero-sub {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── Content wrap ─────────────────────────────── */
+.pn-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 56px 120px;
+}
+
+.pn-rule { border: none; border-top: 0.5px solid var(--rule); margin: 64px 0; }
+
+.pn-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  display: block;
+  margin-bottom: 32px;
+}
+
+/* ── Intro ────────────────────────────────────── */
+.pn-intro {
+  max-width: 680px;
+  margin: 72px 0;
+}
+
+.pn-intro p {
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* ── Writing preview (home) ───────────────────── */
+.pn-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  margin-bottom: 2px;
+}
+
+.pn-writing-card {
+  background: var(--paper);
+  padding: 40px 36px 48px;
+}
+
+.pn-writing-card-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pn-writing-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+}
+.pn-writing-card-title:hover { color: var(--accent); }
+
+.pn-writing-card-deck {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--tertiary);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.pn-writing-card-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--tertiary);
+}
+
+/* ── Office / text pages ──────────────────────── */
+.pn-text-page { max-width: 640px; padding: 72px 0 0; }
+.pn-text-page h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin-bottom: 48px;
+}
+.pn-text-page h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+.pn-text-page p { margin-bottom: 1.5em; }
+
+/* ── Writing inline page ──────────────────────── */
+.pn-writing-page {
+  padding-top: 72px;
+}
+
+.pn-writing-toc {
+  margin-bottom: 80px;
+  padding: 28px 32px;
+  background: rgba(21,19,17,0.04);
+  border-left: 2px solid var(--accent);
+}
+
+.pn-writing-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  cursor: pointer;
+  margin-bottom: 0;
+  list-style: none;
+}
+.pn-writing-toc[open] summary { margin-bottom: 20px; }
+
+.pn-writing-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.pn-writing-toc-links a {
+  font-size: 15px;
+  color: var(--tertiary);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.pn-writing-toc-links a:hover { color: var(--ink); }
+
+/* Each article */
+.pn-article {
+  max-width: 680px;
+  padding: 72px 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.pn-article:first-child { padding-top: 0; }
+
+.pn-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pn-article-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.pn-article-deck {
+  font-style: italic;
+  font-size: 17px;
+  color: var(--tertiary);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.pn-article-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--tertiary);
+  margin-bottom: 40px;
+  display: block;
+}
+
+.pn-article-salutation {
+  font-style: italic;
+  color: var(--tertiary);
+  margin-bottom: 1.5em;
+}
+
+.pn-article-body p {
+  margin-bottom: 1.5em;
+}
+
+.pn-article-sign {
+  margin-top: 2em;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--rule);
+  font-style: italic;
+  color: var(--tertiary);
+}
+
+.pn-article-sign p { margin-bottom: 2px; }
+
+/* ── Correspondence ───────────────────────────── */
+.pn-correspondence {
+  max-width: 560px;
+  padding-top: 72px;
+}
+.pn-correspondence p { margin-bottom: 1.5em; color: var(--tertiary); font-size: 17px; }
+.pn-correspondence a { color: var(--accent); }
+.pn-correspondence h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+/* ── Footer ───────────────────────────────────── */
+.pn-footer {
+  margin-top: 80px;
+  padding: 24px 0;
+  border-top: 0.5px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+}
+
+/* ── Reveal ───────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+/* ── Mobile ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .pn-hero { height: 70vh; }
+  .pn-hero-title { font-size: 48px; }
+  .pn-hero-nav, .pn-hero-content { padding-left: 28px; padding-right: 28px; }
+  .pn-wrap { padding: 0 28px 80px; }
+  .pn-nav { padding: 24px 28px; }
+  .pn-writing-grid { grid-template-columns: 1fr; }
+  .pn-writing-toc-links { grid-template-columns: 1fr; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

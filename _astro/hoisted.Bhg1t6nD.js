@@ -1,0 +1,1 @@
+import"./hoisted.CmOF4Lfm.js";fetch("/archive/manifest.json").then(t=>t.json()).then(t=>{const n=t.rounds?.[0];if(n){const e=document.getElementById("current-round-id");e&&(e.textContent=`Round ${n.roundId}`)}}).catch(()=>{const t=document.getElementById("current-round-id");t&&(t.textContent="Round —")});

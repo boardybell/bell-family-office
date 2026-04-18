@@ -1,0 +1,206 @@
+/* FOUNDATION — Carnegie / Ford endowment register.
+   Lora serif. Cool grey-green. Panoramic image strip.
+   Wide measure, generous interline. Institutional permanence.
+   Reference: Carnegie Corporation, Mellon Foundation, Ford Foundation. */
+
+:root {
+  --paper:    #F7F8F6;
+  --ink:      #131413;
+  --accent:   #2A3E3B;
+  --warm:     #6A6F6C;
+  --faint:    #9EA39F;
+  --rule:     #D8DDD9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  line-height: 2.0;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Nav ──────────────────────────────────────── */
+.pfd-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pfd-nav-firm {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pfd-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.pfd-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pfd-nav-links a:hover { color: var(--accent); }
+
+/* ── Panorama strip ───────────────────────────── */
+.pfd-panorama {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.pfd-panorama img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* ── Wrap ─────────────────────────────────────── */
+.pfd-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 56px 120px;
+}
+
+.pfd-rule { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
+
+/* ── Intro ────────────────────────────────────── */
+.pfd-intro {
+  max-width: 760px;
+  margin: 72px auto 0;
+  text-align: center;
+}
+
+.pfd-intro-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 28px;
+}
+
+.pfd-intro-text {
+  font-size: 20px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+/* ── Section label ────────────────────────────── */
+.pfd-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.pfd-section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+/* ── Writing entries ──────────────────────────── */
+.pfd-entry {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 32px;
+  align-items: start;
+}
+.pfd-entry:first-child { border-top: 1px solid var(--rule); }
+
+.pfd-entry-form { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 5px; }
+.pfd-entry-title { font-family: 'Lora', Georgia, serif; font-size: 20px; font-weight: 400; color: var(--ink); text-decoration: none; display: block; margin-bottom: 4px; line-height: 1.3; }
+.pfd-entry-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pfd-entry-deck { font-style: italic; font-size: 15px; color: var(--warm); line-height: 1.5; }
+.pfd-entry-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; color: var(--faint); white-space: nowrap; padding-top: 2px; }
+
+/* ── Text pages ───────────────────────────────── */
+.pfd-text-page { max-width: 720px; padding-top: 72px; }
+.pfd-text-page h1 { font-family: 'Lora', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.2; margin-bottom: 48px; }
+.pfd-text-page h2 { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 400; margin-top: 48px; margin-bottom: 16px; }
+.pfd-text-page p { margin-bottom: 1.5em; }
+
+.pfd-contact { max-width: 560px; padding-top: 72px; }
+.pfd-contact h1 { font-family: 'Lora', Georgia, serif; font-size: 36px; font-weight: 400; margin-bottom: 48px; }
+.pfd-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.pfd-contact a { color: var(--accent); }
+
+/* ── Writing inline ───────────────────────────── */
+.pfd-writing-page { padding-top: 72px; }
+
+.pfd-toc { margin-bottom: 80px; padding: 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.pfd-toc summary { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); cursor: pointer; list-style: none; margin-bottom: 0; }
+.pfd-toc[open] summary { margin-bottom: 20px; }
+.pfd-toc-links { columns: 2; column-gap: 40px; }
+.pfd-toc-links a { display: block; font-size: 15px; color: var(--warm); text-decoration: none; margin-bottom: 8px; break-inside: avoid; }
+.pfd-toc-links a:hover { color: var(--ink); }
+
+.pfd-article { max-width: 760px; padding: 72px 0; border-bottom: 1px solid var(--rule); }
+.pfd-article:first-child { padding-top: 0; }
+.pfd-article:last-child { border-bottom: none; }
+
+.pfd-article-form { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 14px; }
+.pfd-article-title { font-family: 'Lora', Georgia, serif; font-size: 32px; font-weight: 400; line-height: 1.2; margin-bottom: 12px; }
+.pfd-article-deck { font-style: italic; font-size: 17px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.pfd-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 40px; display: block; }
+.pfd-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.pfd-article-body p { margin-bottom: 1.5em; }
+.pfd-article-sign { margin-top: 2em; padding-top: 20px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.pfd-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────── */
+.pfd-footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .pfd-nav, .pfd-wrap { padding-left: 28px; padding-right: 28px; }
+  .pfd-entry { grid-template-columns: 1fr; }
+  .pfd-entry-date { display: none; }
+  .pfd-toc-links { columns: 1; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

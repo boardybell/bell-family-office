@@ -1,0 +1,407 @@
+/* PRACTICE — Institutional report register.
+   Running left margin carries metadata. Prose reads like a brief.
+   Reference: Hirtle Callaghan, Glenmede, serious professional publishing. */
+
+:root {
+  --paper:    #FAFAF8;
+  --ink:      #111110;
+  --accent:   #1B3B2A;
+  --tertiary: #6E6B64;
+  --faint:    #9E9B93;
+  --rule:     #E0DDD7;
+  --sidebar:  #F3F2EE;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17.5px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 180ms; }
+a:hover { color: var(--accent); }
+
+/* ── Topbar ───────────────────────────────────── */
+.pt-topbar {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pt-topbar-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pt-topbar-firm {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pt-topbar-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.pt-topbar-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  text-decoration: none;
+  transition: color 180ms;
+}
+.pt-topbar-nav a:hover { color: var(--accent); }
+
+/* ── Outer wrap ───────────────────────────────── */
+.pt-outer {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 48px 120px;
+}
+
+/* ── Home hero: split grid ────────────────────── */
+.pt-home-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 72vh;
+  margin: 0 -48px 80px;
+}
+
+.pt-hero-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.pt-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.pt-hero-text {
+  background: var(--sidebar);
+  padding: 72px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--rule);
+}
+
+.pt-hero-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 28px;
+  display: block;
+}
+
+.pt-hero-firm {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.pt-hero-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--tertiary);
+  margin-bottom: 1.4em;
+}
+
+.pt-hero-cta {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+/* ── Two-col content layout ───────────────────── */
+.pt-content-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0 80px;
+  align-items: start;
+}
+
+.pt-sidebar {
+  position: sticky;
+  top: 88px;
+  padding-top: 8px;
+}
+
+.pt-sidebar-block {
+  margin-bottom: 40px;
+}
+
+.pt-sidebar-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pt-sidebar-rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin-bottom: 16px;
+}
+
+.pt-sidebar-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.pt-sidebar-nav li {
+  margin-bottom: 8px;
+}
+
+.pt-sidebar-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 12.5px;
+  color: var(--tertiary);
+  text-decoration: none;
+}
+.pt-sidebar-nav a:hover { color: var(--accent); }
+
+.pt-sidebar-meta {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: var(--faint);
+}
+
+/* ── Main content ─────────────────────────────── */
+.pt-main { padding-top: 8px; }
+
+.pt-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.pt-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.pt-lede {
+  font-size: 22px;
+  line-height: 1.65;
+  margin-bottom: 1.4em;
+  letter-spacing: -0.01em;
+}
+
+.pt-body { margin-bottom: 1.5em; }
+
+.pt-rule { border: none; border-top: 1px solid var(--rule); margin: 56px 0; }
+
+/* ── Office headings ──────────────────────────── */
+.pt-main h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 48px;
+}
+
+.pt-main h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+/* ── Writing inline articles ──────────────────── */
+.pt-article {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pt-article:first-child { padding-top: 0; }
+.pt-article:last-child { border-bottom: none; }
+
+.pt-article-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pt-article-header-left {}
+
+.pt-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pt-article-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.pt-article-deck {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--tertiary);
+  line-height: 1.55;
+}
+
+.pt-article-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+  white-space: nowrap;
+  padding-top: 6px;
+}
+
+.pt-article-salutation {
+  font-style: italic;
+  color: var(--tertiary);
+  margin-bottom: 1.5em;
+}
+
+.pt-article-body p { margin-bottom: 1.5em; }
+
+.pt-article-sign {
+  margin-top: 2em;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-style: italic;
+  color: var(--tertiary);
+  font-size: 16px;
+}
+.pt-article-sign p { margin-bottom: 2px; }
+
+/* Writing TOC */
+.pt-writing-toc {
+  margin-bottom: 64px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.pt-writing-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 0;
+}
+.pt-writing-toc[open] summary { margin-bottom: 20px; }
+
+.pt-toc-links {
+  columns: 2;
+  column-gap: 40px;
+}
+
+.pt-toc-links a {
+  display: block;
+  font-size: 14px;
+  color: var(--tertiary);
+  text-decoration: none;
+  margin-bottom: 8px;
+  break-inside: avoid;
+}
+.pt-toc-links a:hover { color: var(--accent); }
+
+/* ── Footer ───────────────────────────────────── */
+.pt-footer {
+  grid-column: 1 / -1;
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ── Reveal ───────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+/* ── Mobile ───────────────────────────────────── */
+@media (max-width: 840px) {
+  .pt-outer { padding: 0 24px 80px; }
+  .pt-topbar-inner { padding: 0 24px; }
+  .pt-home-hero { grid-template-columns: 1fr; min-height: auto; margin: 0 -24px 48px; }
+  .pt-hero-image { height: 55vw; }
+  .pt-hero-text { padding: 40px 28px; border-left: none; border-top: 1px solid var(--rule); }
+  .pt-content-grid { grid-template-columns: 1fr; }
+  .pt-sidebar { position: static; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
+  .pt-article-header { grid-template-columns: 1fr; }
+  .pt-article-date { display: none; }
+  .pt-toc-links { columns: 1; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

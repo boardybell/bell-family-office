@@ -1,0 +1,357 @@
+/* CHAMBER — Dark mode luxury. Goldman / Rothschild private register.
+   Near-black ground. Parchment text. Old gold accent.
+   The room you enter after hours.
+   Reference: Rothschild private, Goldman Sachs PW, Edmond de Rothschild. */
+
+:root {
+  --paper:   #0F0E0C;
+  --ink:     #E8E2D6;
+  --accent:  #B8975A;
+  --warm:    #8A8278;
+  --faint:   #5A564E;
+  --rule:    #2A2822;
+  --light:   #1A1816;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.88;
+  font-feature-settings: "onum" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Hero ─────────────────────────────────────── */
+.pch-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.pch-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(0.55) sepia(0.2);
+}
+
+.pch-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(5,4,3,0.1) 0%, rgba(5,4,3,0.55) 60%, rgba(5,4,3,0.92) 100%);
+}
+
+.pch-hero-nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 40px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.pch-hero-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: rgba(232,226,214,0.9);
+  text-decoration: none;
+}
+
+.pch-hero-links {
+  display: flex;
+  gap: 36px;
+}
+
+.pch-hero-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(184,151,90,0.8);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pch-hero-links a:hover { color: var(--accent); }
+
+.pch-hero-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 56px 72px;
+  z-index: 2;
+}
+
+.pch-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 68px;
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 20px;
+  max-width: 820px;
+}
+
+.pch-hero-sub {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Wrap ─────────────────────────────────────── */
+.pch-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 56px 120px;
+}
+
+.pch-rule { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
+
+/* ── Nav (inner pages) ────────────────────────── */
+.pch-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pch-nav-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pch-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.pch-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pch-nav-links a:hover { color: var(--accent); }
+
+/* ── Section label ────────────────────────────── */
+.pch-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 36px;
+}
+
+/* ── Intro ────────────────────────────────────── */
+.pch-intro {
+  max-width: 720px;
+  margin: 72px 0;
+}
+.pch-intro p { font-size: 20px; line-height: 1.78; }
+
+/* ── Writing cards ────────────────────────────── */
+.pch-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+}
+
+.pch-card {
+  background: var(--light);
+  padding: 36px 32px 44px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: background 200ms;
+}
+.pch-card:hover { background: #221F1B; }
+
+.pch-card-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pch-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--ink);
+}
+
+.pch-card-deck {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--warm);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.pch-card-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+/* ── Text pages ───────────────────────────────── */
+.pch-text-page { padding-top: 72px; max-width: 680px; }
+.pch-text-page h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin-bottom: 48px;
+}
+.pch-text-page h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+.pch-text-page p { margin-bottom: 1.5em; }
+
+.pch-contact { padding-top: 72px; max-width: 560px; }
+.pch-contact h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 40px; font-weight: 400; margin-bottom: 48px; }
+.pch-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.pch-contact a { color: var(--accent); }
+
+/* ── Writing inline ───────────────────────────── */
+.pch-writing-page { padding-top: 72px; }
+
+.pch-toc {
+  margin-bottom: 80px;
+  padding: 28px 32px;
+  background: var(--light);
+  border-left: 2px solid var(--accent);
+}
+
+.pch-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 0;
+}
+.pch-toc[open] summary { margin-bottom: 20px; }
+
+.pch-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.pch-toc-links a {
+  font-size: 15px;
+  color: var(--warm);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.pch-toc-links a:hover { color: var(--ink); }
+
+.pch-article {
+  max-width: 720px;
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pch-article:first-child { padding-top: 0; }
+.pch-article:last-child { border-bottom: none; }
+
+.pch-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pch-article-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.pch-article-deck { font-style: italic; font-size: 17px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.pch-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 40px; display: block; }
+.pch-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.pch-article-body p { margin-bottom: 1.5em; }
+.pch-article-sign { margin-top: 2em; padding-top: 20px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.pch-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────── */
+.pch-footer {
+  margin-top: 80px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .pch-hero { height: 72vh; }
+  .pch-hero-title { font-size: 44px; }
+  .pch-hero-nav, .pch-hero-content { padding-left: 28px; padding-right: 28px; }
+  .pch-wrap { padding: 0 28px 80px; }
+  .pch-writing-grid { grid-template-columns: 1fr; }
+  .pch-toc-links { grid-template-columns: 1fr; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

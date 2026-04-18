@@ -1,0 +1,142 @@
+:root {
+  --paper: #F5EEDB;
+  --ink: #2C2A28;
+  --accent: #932E1E;
+  --tertiary: #76715F;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Libre Franklin', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.v-register { max-width: 900px; margin: 0 auto; padding: 64px 48px 120px; position: relative; }
+
+/* Titleblock */
+.titleblock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  border: 1px solid var(--ink);
+  padding: 10px 14px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  font-variant: small-caps;
+  color: var(--tertiary);
+  background: var(--paper);
+  z-index: 100;
+  min-width: 140px;
+}
+.titleblock-row { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--ink); padding: 3px 0; }
+.titleblock-row:last-child { border-bottom: none; }
+
+/* Dimension line on homepage */
+.dimension-line {
+  position: relative;
+  height: 24px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.dimension-line svg { width: 100%; height: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .dimension-line path { stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: drawDimension 800ms ease-out both; }
+  @keyframes drawDimension { to { stroke-dashoffset: 0; } }
+}
+
+/* Section callout triangles */
+h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: 'Libre Franklin', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+}
+h2::before {
+  content: '▶';
+  font-size: 8px;
+  color: var(--accent);
+}
+
+/* North arrow placeholder */
+.north-arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  text-align: center;
+  color: var(--tertiary);
+  opacity: 0.5;
+}
+
+.site-name {
+  font-family: 'Libre Franklin', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.site-byline {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--tertiary);
+}
+
+nav.main-nav { margin: 16px 0 40px; }
+nav.main-nav a {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 200ms ease-out;
+}
+nav.main-nav a:hover { color: var(--accent); }
+
+.content-col { max-width: 620px; }
+.content-col figure { margin-right: calc(-1 * (900px - 620px)); max-width: 900px; }
+@media (max-width: 900px) { .content-col figure { margin-right: 0; max-width: 100%; } }
+
+/* Numbered callouts */
+.callout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  font-size: 10px;
+  color: var(--accent);
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+h1 { font-size: 20px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 0.6em; }
+p { margin-bottom: 1.4em; font-family: 'Libre Franklin', Arial, sans-serif; }
+p.serif-caption { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 14px; color: var(--tertiary); }
+
+/* Grid animation */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms ease-out; }
+a:hover { color: var(--accent); }
+
+figcaption { font-size: 13px; color: var(--tertiary); margin-top: 8px; font-style: italic; font-family: 'Source Serif 4', Georgia, serif; }
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

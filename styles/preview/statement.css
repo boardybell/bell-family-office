@@ -1,0 +1,229 @@
+/* STATEMENT — Opens with one large editorial claim. Bessemer register.
+   The first thing you read is the firm's proposition at 52px.
+   Everything else follows from that. */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #FAF8F3;
+  --ink:    #1C1A16;
+  --accent: #3B1F1F;
+  --muted:  #6B6560;
+  --rule:   #D4CFC6;
+}
+
+html { background: var(--bg); }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ps-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 40px 140px;
+}
+
+/* ── Navigation ─────────────────────────────── */
+.ps-nav {
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 0.5px solid var(--rule);
+  margin-bottom: 80px;
+}
+
+.ps-nav-firm {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.ps-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.ps-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 160ms ease-out;
+}
+
+.ps-nav-links a:hover { color: var(--ink); }
+
+/* ── Hero statement ──────────────────────────── */
+.ps-hero {
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 72px;
+}
+
+.ps-display {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.13;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 28px;
+  /* Hanging punctuation indent on opening quote */
+}
+
+.ps-display-attr {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-left: 2px;
+}
+
+.ps-display-attr span {
+  color: var(--accent);
+}
+
+/* ── Sections ────────────────────────────────── */
+.ps-section {
+  margin-bottom: 64px;
+}
+
+.ps-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.ps-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.ps-section-rule {
+  flex: 1;
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 0;
+}
+
+/* Body */
+.ps-body {
+  font-size: 18px;
+  line-height: 1.85;
+  margin-bottom: 1.4em;
+}
+
+/* The founding statement — first paragraph — larger */
+.ps-lede {
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+/* Writing entries */
+.ps-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0 32px;
+  padding: 20px 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.ps-entry:first-child { border-top: 0.5px solid var(--rule); }
+
+.ps-entry-left {}
+
+.ps-entry-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.ps-entry-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.35;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ps-entry-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.ps-entry-deck {
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.ps-entry-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+  align-self: start;
+  padding-top: 6px;
+}
+
+/* Correspondence */
+.ps-contact {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.ps-contact a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ps-contact a:hover { color: var(--accent); }
+
+/* Footer */
+.ps-footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .ps-wrap { padding: 0 24px 100px; }
+  .ps-display { font-size: 34px; }
+  .ps-entry { grid-template-columns: 1fr; }
+  .ps-entry-date { display: none; }
+}

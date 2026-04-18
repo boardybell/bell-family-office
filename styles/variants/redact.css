@@ -1,0 +1,328 @@
+/* REDACT — XXX. Cold precision dark mode. No warmth.
+   Pure black. Cool white. IBM Plex Mono for structure.
+   The private intelligence register. Clinical, spare.
+   Reference: family office ops document, private equity memo. */
+
+:root {
+  --paper:  #0A0A0A;
+  --ink:    #E8E8E4;
+  --accent: #A0A09C;
+  --warm:   #686864;
+  --faint:  #424240;
+  --rule:   #1C1C1C;
+  --light:  #131313;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.85;
+  font-feature-settings: "onum" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: border-color 200ms, color 200ms; }
+a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── Nav bar ──────────────────────────────────────── */
+.prd-bar {
+  border-bottom: 1px solid var(--rule);
+  padding: 0 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prd-bar-firm {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+}
+.prd-bar-firm:hover { color: var(--accent); border-bottom: none; }
+
+.prd-bar-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.prd-bar-nav a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--warm);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 200ms;
+}
+.prd-bar-nav a:hover { color: var(--ink); border-bottom: none; }
+
+/* ── Hero ─────────────────────────────────────────── */
+.prd-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 88px 64px 80px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.prd-hero-id {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 40px;
+}
+
+.prd-hero-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin: 0 0 56px;
+  max-width: 880px;
+}
+
+.prd-hero-meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0;
+  width: fit-content;
+  border: 1px solid var(--rule);
+}
+
+.prd-hero-meta-item {
+  padding: 16px 28px;
+  border-right: 1px solid var(--rule);
+}
+.prd-hero-meta-item:last-child { border-right: none; }
+
+.prd-hero-meta-key {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.prd-hero-meta-value {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+/* ── Wrap ─────────────────────────────────────────── */
+.prd-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 64px 120px;
+}
+
+.prd-rule { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
+
+/* ── Section label ────────────────────────────────── */
+.prd-section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+
+/* ── Intro ────────────────────────────────────────── */
+.prd-intro { max-width: 700px; margin: 72px 0; }
+.prd-intro p { font-size: 20px; line-height: 1.82; }
+
+/* ── Writing cards ────────────────────────────────── */
+.prd-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+}
+
+.prd-card {
+  background: var(--light);
+  padding: 36px 32px 44px;
+  text-decoration: none;
+  border-bottom: none;
+  color: var(--ink);
+  display: block;
+  transition: background 200ms;
+}
+.prd-card:hover { background: #1A1A1A; border-bottom: none; }
+
+.prd-card-form {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.prd-card-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--ink);
+}
+
+.prd-card-deck {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--warm);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.prd-card-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+
+/* ── Text pages ───────────────────────────────────── */
+.prd-text-page { padding-top: 72px; max-width: 680px; }
+.prd-text-page h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 48px;
+}
+.prd-text-page h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+.prd-text-page p { margin-bottom: 1.5em; }
+
+.prd-contact { padding-top: 72px; max-width: 560px; }
+.prd-contact h1 { font-family: 'EB Garamond', Georgia, serif; font-size: 40px; font-weight: 400; margin-bottom: 48px; }
+.prd-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.prd-contact a { color: var(--accent); border-bottom-color: var(--rule); }
+
+/* ── Writing inline ───────────────────────────────── */
+.prd-writing-page { padding-top: 72px; }
+
+.prd-toc {
+  margin-bottom: 80px;
+  padding: 28px 32px;
+  background: var(--light);
+  border: 1px solid var(--rule);
+}
+
+.prd-toc summary {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm);
+  cursor: pointer;
+  list-style: none;
+}
+.prd-toc[open] summary { margin-bottom: 20px; }
+
+.prd-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.prd-toc-links a {
+  font-size: 15px;
+  color: var(--warm);
+  text-decoration: none;
+  border-bottom: none;
+  line-height: 1.4;
+}
+.prd-toc-links a:hover { color: var(--ink); border-bottom: none; }
+
+.prd-article {
+  max-width: 720px;
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.prd-article:first-child { padding-top: 0; }
+.prd-article:last-child { border-bottom: none; }
+
+.prd-article-form {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.prd-article-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 12px;
+}
+
+.prd-article-deck { font-style: italic; font-size: 17px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.prd-article-date { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--faint); margin-bottom: 40px; display: block; }
+.prd-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.prd-article-body p { margin-bottom: 1.5em; }
+.prd-article-sign { margin-top: 2em; padding-top: 20px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.prd-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────────── */
+.prd-footer {
+  margin-top: 80px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .prd-bar { padding: 0 28px; }
+  .prd-hero { padding: 64px 28px 56px; }
+  .prd-hero-title { font-size: 52px; }
+  .prd-hero-meta { grid-template-columns: 1fr; }
+  .prd-hero-meta-item { border-right: none; border-bottom: 1px solid var(--rule); }
+  .prd-wrap { padding: 0 28px 80px; }
+  .prd-writing-grid { grid-template-columns: 1fr; }
+  .prd-toc-links { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,313 @@
+/* SEAL — XXIX. Dark ceremonial. Deep forest near-black.
+   Cormorant SC for display headers. Muted sage accent.
+   The charter room, the trust instrument, the deed.
+   Reference: Coutts private bank, archival document register. */
+
+:root {
+  --paper:  #0C1208;
+  --ink:    #E8E4D6;
+  --accent: #8FA882;
+  --warm:   #7A806E;
+  --faint:  #484D40;
+  --rule:   #1A2114;
+  --light:  #131A0E;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.88;
+  font-feature-settings: "onum" 1, "liga" 1, "smcp" 0;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Header ───────────────────────────────────────── */
+.psl-header {
+  padding: 48px 64px 44px;
+  border-bottom: 1px solid var(--rule);
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.psl-header-firm {
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.psl-header-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.psl-header-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.psl-header-nav a:hover { color: var(--accent); }
+
+/* ── Hero ─────────────────────────────────────────── */
+.psl-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 64px 80px;
+  position: relative;
+}
+
+.psl-hero-eyebrow {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 32px;
+}
+
+.psl-hero-title {
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: 0.04em;
+  margin: 0 0 40px;
+  max-width: 820px;
+}
+
+.psl-hero-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: 32px;
+}
+
+.psl-hero-sub {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm);
+  max-width: 480px;
+  line-height: 1.9;
+}
+
+/* ── Wrap ─────────────────────────────────────────── */
+.psl-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 64px 120px;
+}
+
+.psl-rule { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
+
+/* ── Section label ────────────────────────────────── */
+.psl-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* ── Intro ────────────────────────────────────────── */
+.psl-intro { max-width: 700px; margin: 64px 0; }
+.psl-intro p { font-size: 20px; line-height: 1.82; }
+
+/* ── Writing cards ────────────────────────────────── */
+.psl-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+}
+
+.psl-card {
+  background: var(--light);
+  padding: 36px 32px 44px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: background 200ms;
+}
+.psl-card:hover { background: #1A2215; }
+
+.psl-card-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.psl-card-title {
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.psl-card-deck {
+  font-style: italic;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 15px;
+  color: var(--warm);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.psl-card-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+/* ── Text pages ───────────────────────────────────── */
+.psl-text-page { padding-top: 72px; max-width: 680px; }
+.psl-text-page h1 {
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  margin-bottom: 48px;
+}
+.psl-text-page h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+.psl-text-page p { margin-bottom: 1.5em; }
+
+.psl-contact { padding-top: 72px; max-width: 560px; }
+.psl-contact h1 { font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif; font-size: 40px; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 48px; }
+.psl-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.psl-contact a { color: var(--accent); }
+
+/* ── Writing inline ───────────────────────────────── */
+.psl-writing-page { padding-top: 72px; }
+
+.psl-toc {
+  margin-bottom: 80px;
+  padding: 28px 32px;
+  background: var(--light);
+  border-left: 2px solid var(--accent);
+}
+
+.psl-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm);
+  cursor: pointer;
+  list-style: none;
+}
+.psl-toc[open] summary { margin-bottom: 20px; }
+
+.psl-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.psl-toc-links a {
+  font-size: 15px;
+  color: var(--warm);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.psl-toc-links a:hover { color: var(--ink); }
+
+.psl-article {
+  max-width: 720px;
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.psl-article:first-child { padding-top: 0; }
+.psl-article:last-child { border-bottom: none; }
+
+.psl-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.psl-article-title {
+  font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.psl-article-deck { font-style: italic; font-family: 'EB Garamond', Georgia, serif; font-size: 17px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.psl-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 40px; display: block; }
+.psl-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.psl-article-body p { margin-bottom: 1.5em; }
+.psl-article-sign { margin-top: 2em; padding-top: 20px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.psl-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────────── */
+.psl-footer {
+  margin-top: 80px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .psl-header { padding: 32px 28px; }
+  .psl-hero { padding: 64px 28px 56px; }
+  .psl-hero-title { font-size: 44px; }
+  .psl-wrap { padding: 0 28px 80px; }
+  .psl-writing-grid { grid-template-columns: 1fr; }
+  .psl-toc-links { grid-template-columns: 1fr; }
+}

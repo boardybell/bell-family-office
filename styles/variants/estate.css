@@ -1,0 +1,410 @@
+/* ESTATE — Julius Baer / Lombard Odier register.
+   Full-bleed hero with text panel seated at bottom-left.
+   Cormorant Garamond at command. Deep navy on ivory.
+   Reference: Julius Baer, Lombard Odier, Pictet annual reports. */
+
+:root {
+  --paper:   #F5F2EC;
+  --ink:     #131211;
+  --accent:  #1A2F47;
+  --warm:    #7B7368;
+  --faint:   #ADA9A1;
+  --rule:    #D8D4CC;
+  --white:   #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.88;
+  font-feature-settings: "onum" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Hero ─────────────────────────────────────── */
+.pe-hero {
+  position: relative;
+  height: 92vh;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.pe-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.pe-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10,8,6,0.04) 0%,
+    rgba(10,8,6,0.18) 40%,
+    rgba(10,8,6,0.68) 100%
+  );
+}
+
+.pe-hero-nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 40px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.pe-hero-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+}
+
+.pe-hero-links {
+  display: flex;
+  gap: 36px;
+}
+
+.pe-hero-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pe-hero-links a:hover { color: #fff; }
+
+.pe-hero-panel {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 52%;
+  padding: 56px 64px;
+  background: linear-gradient(90deg, rgba(10,8,6,0.78) 0%, transparent 100%);
+  z-index: 2;
+}
+
+.pe-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 70px;
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.pe-hero-sub {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Wrap ─────────────────────────────────────── */
+.pe-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 56px 120px;
+}
+
+.pe-inner {
+  max-width: 760px;
+}
+
+.pe-rule { border: none; border-top: 0.5px solid var(--rule); margin: 64px 0; }
+
+/* ── Nav (inner pages) ────────────────────────── */
+.pe-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.pe-nav-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pe-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.pe-nav-links a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pe-nav-links a:hover { color: var(--accent); }
+
+/* ── Section label ────────────────────────────── */
+.pe-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.pe-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ── Writing grid ─────────────────────────────── */
+.pe-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  margin-bottom: 2px;
+}
+
+.pe-card {
+  background: var(--paper);
+  padding: 36px 32px 44px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+}
+
+.pe-card-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pe-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  display: block;
+}
+.pe-card:hover .pe-card-title { color: var(--accent); }
+
+.pe-card-deck {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--warm);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.pe-card-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+/* ── Intro ────────────────────────────────────── */
+.pe-intro {
+  max-width: 720px;
+  margin: 72px 0;
+}
+
+.pe-intro p {
+  font-size: 20px;
+  line-height: 1.78;
+}
+
+/* ── Text pages ───────────────────────────────── */
+.pe-text-page { padding-top: 72px; max-width: 680px; }
+.pe-text-page h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin-bottom: 48px;
+}
+.pe-text-page h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+.pe-text-page p { margin-bottom: 1.5em; }
+
+/* ── Correspondence ───────────────────────────── */
+.pe-contact { padding-top: 72px; max-width: 560px; }
+.pe-contact h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+.pe-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.pe-contact a { color: var(--accent); }
+
+/* ── Writing inline ───────────────────────────── */
+.pe-writing-page { padding-top: 72px; }
+
+.pe-toc {
+  margin-bottom: 80px;
+  padding: 28px 32px;
+  background: rgba(26,47,71,0.04);
+  border-left: 2px solid var(--accent);
+}
+
+.pe-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 0;
+}
+.pe-toc[open] summary { margin-bottom: 20px; }
+
+.pe-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.pe-toc-links a {
+  font-size: 15px;
+  color: var(--warm);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.pe-toc-links a:hover { color: var(--ink); }
+
+.pe-article {
+  max-width: 720px;
+  padding: 72px 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+.pe-article:first-child { padding-top: 0; }
+.pe-article:last-child { border-bottom: none; }
+
+.pe-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pe-article-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.pe-article-deck {
+  font-style: italic;
+  font-size: 17px;
+  color: var(--warm);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.pe-article-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  margin-bottom: 40px;
+  display: block;
+}
+
+.pe-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.pe-article-body p { margin-bottom: 1.5em; }
+
+.pe-article-sign {
+  margin-top: 2em;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--rule);
+  font-style: italic;
+  color: var(--warm);
+}
+.pe-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────── */
+.pe-footer {
+  margin-top: 80px;
+  padding: 24px 0;
+  border-top: 0.5px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ── Reveal ───────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+/* ── Mobile ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .pe-hero { height: 72vh; }
+  .pe-hero-title { font-size: 46px; }
+  .pe-hero-nav, .pe-hero-panel { padding-left: 28px; padding-right: 28px; }
+  .pe-hero-panel { width: 100%; background: linear-gradient(0deg, rgba(10,8,6,0.80) 0%, transparent 100%); }
+  .pe-wrap { padding: 0 28px 80px; }
+  .pe-nav { padding: 24px 28px; }
+  .pe-writing-grid { grid-template-columns: 1fr; }
+  .pe-toc-links { grid-template-columns: 1fr; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

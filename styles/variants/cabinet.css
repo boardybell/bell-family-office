@@ -1,0 +1,306 @@
+/* CABINET — XXVIII. Architectural two-column dark layout.
+   Left panel: index/nav in a slightly lighter dark.
+   Right: prose. Crimson accent. Private library register.
+   Reference: Rothschild archive room, private reading room. */
+
+:root {
+  --paper:  #0E0C09;
+  --ink:    #E6E0D2;
+  --accent: #8C3030;
+  --warm:   #837B6C;
+  --faint:  #4C4840;
+  --rule:   #201E1A;
+  --panel:  #161310;
+  --light:  #181410;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.85;
+  font-feature-settings: "onum" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Shell layout ─────────────────────────────────── */
+.pcb-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.pcb-rail {
+  background: var(--panel);
+  border-right: 1px solid var(--rule);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.pcb-rail-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.pcb-rail-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.pcb-rail-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px;
+}
+
+.pcb-rail-nav li { margin-bottom: 2px; }
+
+.pcb-rail-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  display: block;
+  padding: 4px 0;
+  transition: color 200ms;
+}
+.pcb-rail-nav a:hover { color: var(--ink); }
+
+.pcb-rail-rule { border: none; border-top: 1px solid var(--rule); margin: 0 0 32px; }
+
+.pcb-rail-footer {
+  margin-top: auto;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  line-height: 1.8;
+}
+
+/* ── Main ─────────────────────────────────────────── */
+.pcb-main {
+  padding: 64px 72px 120px;
+  max-width: 820px;
+}
+
+/* ── Section label ────────────────────────────────── */
+.pcb-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 36px;
+}
+
+/* ── Intro ────────────────────────────────────────── */
+.pcb-intro { max-width: 680px; margin-bottom: 72px; }
+.pcb-intro p { font-size: 20px; line-height: 1.82; }
+
+/* ── Rule ─────────────────────────────────────────── */
+.pcb-rule { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
+
+/* ── Writing cards ────────────────────────────────── */
+.pcb-writing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--rule);
+  max-width: 680px;
+}
+
+.pcb-card {
+  background: var(--light);
+  padding: 36px 32px 44px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: background 200ms;
+  border-left: 2px solid transparent;
+}
+.pcb-card:hover { background: #1E1916; border-left-color: var(--accent); }
+
+.pcb-card-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pcb-card-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--ink);
+}
+
+.pcb-card-deck {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--warm);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.pcb-card-date {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+/* ── Text pages ───────────────────────────────────── */
+.pcb-text-page { max-width: 640px; }
+.pcb-text-page h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 48px;
+}
+.pcb-text-page h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+.pcb-text-page p { margin-bottom: 1.5em; }
+
+.pcb-contact { max-width: 560px; }
+.pcb-contact h1 { font-family: 'EB Garamond', Georgia, serif; font-size: 40px; font-weight: 400; margin-bottom: 48px; }
+.pcb-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.pcb-contact a { color: var(--accent); }
+
+/* ── Writing inline ───────────────────────────────── */
+.pcb-toc {
+  margin-bottom: 72px;
+  padding: 28px 32px;
+  background: var(--light);
+  border-left: 2px solid var(--accent);
+  max-width: 640px;
+}
+
+.pcb-toc summary {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm);
+  cursor: pointer;
+  list-style: none;
+}
+.pcb-toc[open] summary { margin-bottom: 20px; }
+
+.pcb-toc-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.pcb-toc-links a {
+  font-size: 15px;
+  color: var(--warm);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.pcb-toc-links a:hover { color: var(--ink); }
+
+.pcb-article {
+  max-width: 680px;
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pcb-article:first-child { padding-top: 0; }
+.pcb-article:last-child { border-bottom: none; }
+
+.pcb-article-form {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pcb-article-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 12px;
+}
+
+.pcb-article-deck { font-style: italic; font-size: 17px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.pcb-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 40px; display: block; }
+.pcb-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.pcb-article-body p { margin-bottom: 1.5em; }
+.pcb-article-sign { margin-top: 2em; padding-top: 20px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.pcb-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────────── */
+.pcb-footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  max-width: 680px;
+  margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  .pcb-shell { grid-template-columns: 1fr; }
+  .pcb-rail { position: relative; height: auto; padding: 32px 28px; flex-direction: row; flex-wrap: wrap; gap: 24px; align-items: center; border-right: none; border-bottom: 1px solid var(--rule); }
+  .pcb-rail-firm { margin-bottom: 0; }
+  .pcb-rail-rule { display: none; }
+  .pcb-rail-footer { display: none; }
+  .pcb-main { padding: 40px 28px 80px; }
+  .pcb-toc-links { grid-template-columns: 1fr; }
+}

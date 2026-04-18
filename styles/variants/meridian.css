@@ -1,0 +1,279 @@
+/* MERIDIAN — Asymmetric architectural grid.
+   Home splits: firm statement left / writing cards right.
+   Watermark MMXXVI at 6% opacity. Libre Baskerville.
+   Reference: Neuflize OBC, Van Lanschot Kempen, architectural precision. */
+
+:root {
+  --paper:    #F4F1EB;
+  --ink:      #181614;
+  --accent:   #2C4A35;
+  --warm:     #7A7468;
+  --faint:    #ADA89E;
+  --rule:     #D6D2C8;
+  --panel:    #EDE9E1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Topbar ───────────────────────────────────── */
+.pmd-topbar {
+  border-bottom: 1px solid var(--rule);
+  padding: 0 56px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pmd-topbar::before {
+  content: 'MMXXVI';
+  position: absolute;
+  right: 48px;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 96px;
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.05;
+  line-height: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.pmd-topbar-firm {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pmd-topbar-nav {
+  display: flex;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.pmd-topbar-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pmd-topbar-nav a:hover { color: var(--accent); }
+
+/* ── Home split ───────────────────────────────── */
+.pmd-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 68vh;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pmd-split-left {
+  padding: 72px 56px;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pmd-split-left::after {
+  content: 'MMXXVI';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 200px;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.055;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pmd-split-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 28px;
+}
+
+.pmd-split-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.pmd-split-body {
+  font-size: 16px;
+  line-height: 1.78;
+  color: var(--warm);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 28px;
+}
+
+.pmd-split-cta {
+  display: inline-block;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.pmd-split-right {
+  padding: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pmd-split-right-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  padding: 0 40px 20px;
+  border-bottom: 1px solid var(--rule);
+  display: block;
+}
+
+/* ── Writing cards (right panel) ─────────────── */
+.pmd-card {
+  padding: 28px 40px;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: background 200ms;
+}
+.pmd-card:hover { background: var(--panel); }
+
+.pmd-card-form { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 5px; }
+.pmd-card-title { font-family: 'Libre Baskerville', Georgia, serif; font-size: 18px; font-weight: 400; line-height: 1.25; margin-bottom: 5px; display: block; }
+.pmd-card-deck { font-style: italic; font-size: 14px; color: var(--warm); line-height: 1.5; }
+
+/* ── Inner pages ──────────────────────────────── */
+.pmd-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 56px 120px;
+}
+
+.pmd-text-page { max-width: 680px; padding-top: 72px; }
+.pmd-text-page h1 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.2; margin-bottom: 48px; }
+.pmd-text-page h2 { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 400; margin-top: 48px; margin-bottom: 16px; }
+.pmd-text-page p { margin-bottom: 1.5em; }
+
+.pmd-contact { max-width: 560px; padding-top: 72px; }
+.pmd-contact h1 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 36px; font-weight: 400; margin-bottom: 48px; }
+.pmd-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
+.pmd-contact a { color: var(--accent); }
+
+.pmd-rule { border: none; border-top: 1px solid var(--rule); margin: 56px 0; }
+
+.pmd-section-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.pmd-section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+/* ── Writing inline ───────────────────────────── */
+.pmd-writing-page { padding-top: 72px; }
+
+.pmd-toc { margin-bottom: 72px; padding: 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.pmd-toc summary { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); cursor: pointer; list-style: none; margin-bottom: 0; }
+.pmd-toc[open] summary { margin-bottom: 20px; }
+.pmd-toc-links { columns: 2; column-gap: 40px; }
+.pmd-toc-links a { display: block; font-size: 14.5px; color: var(--warm); text-decoration: none; margin-bottom: 8px; break-inside: avoid; }
+.pmd-toc-links a:hover { color: var(--ink); }
+
+.pmd-article { max-width: 720px; padding: 72px 0; border-bottom: 1px solid var(--rule); }
+.pmd-article:first-child { padding-top: 0; }
+.pmd-article:last-child { border-bottom: none; }
+
+.pmd-article-form { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 14px; }
+.pmd-article-title { font-family: 'Libre Baskerville', Georgia, serif; font-size: 32px; font-weight: 400; line-height: 1.18; margin-bottom: 12px; }
+.pmd-article-deck { font-style: italic; font-size: 16.5px; color: var(--warm); line-height: 1.55; margin-bottom: 8px; }
+.pmd-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 40px; display: block; }
+.pmd-article-salutation { font-style: italic; color: var(--warm); margin-bottom: 1.5em; }
+.pmd-article-body p { margin-bottom: 1.5em; }
+.pmd-article-sign { margin-top: 2em; padding-top: 20px; border-top: 1px solid var(--rule); font-style: italic; color: var(--warm); }
+.pmd-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────── */
+.pmd-footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 840px) {
+  .pmd-topbar { padding: 0 24px; }
+  .pmd-split { grid-template-columns: 1fr; min-height: auto; }
+  .pmd-split-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 48px 28px; }
+  .pmd-split-title { font-size: 28px; }
+  .pmd-wrap { padding: 0 24px 80px; }
+  .pmd-toc-links { columns: 1; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

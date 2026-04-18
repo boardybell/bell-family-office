@@ -1,0 +1,191 @@
+/* CORRESPONDENT — Private letter register.
+   520px column in massive whitespace. Form labels float in left margin.
+   Cormorant Garamond, italics-forward. One voice to one reader.
+   Reference: Private correspondence tradition, Walpole Society letters. */
+
+:root {
+  --paper:    #F8F6F1;
+  --ink:      #1B1916;
+  --accent:   #3B2A1A;
+  --warm:     #8A8078;
+  --faint:    #B8B2A8;
+  --rule:     #DCD8D0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.95;
+  font-feature-settings: "onum" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color 200ms; }
+a:hover { color: var(--accent); }
+
+/* ── Masthead ─────────────────────────────────── */
+.pcr-masthead {
+  text-align: center;
+  padding: 64px 24px 48px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pcr-masthead-firm {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pcr-masthead-sub {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+}
+
+.pcr-masthead-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.pcr-masthead-nav a {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.pcr-masthead-nav a:hover { color: var(--accent); }
+
+/* ── Column ───────────────────────────────────── */
+.pcr-outer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 48px 120px;
+  position: relative;
+}
+
+.pcr-col {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-top: 72px;
+}
+
+/* ── Lede / letter opener ─────────────────────── */
+.pcr-dateline {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 40px;
+}
+
+.pcr-lede {
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.75;
+  margin-bottom: 1.4em;
+}
+
+.pcr-body p { margin-bottom: 1.5em; }
+.pcr-rule { border: none; border-top: 0.5px solid var(--rule); margin: 48px 0; }
+
+/* ── Page titles ──────────────────────────────── */
+.pcr-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin-bottom: 48px;
+}
+
+.pcr-section-head {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  font-weight: 400;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+/* ── Writing entries ──────────────────────────── */
+.pcr-entry {
+  padding: 28px 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+.pcr-entry:first-child { border-top: 0.5px solid var(--rule); }
+
+.pcr-entry-form { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 5px; }
+.pcr-entry-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--ink); text-decoration: none; display: block; margin-bottom: 4px; line-height: 1.25; }
+.pcr-entry-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pcr-entry-deck { font-style: italic; font-size: 16px; color: var(--warm); line-height: 1.5; }
+.pcr-entry-date { font-family: 'Libre Franklin', sans-serif; font-size: 10.5px; color: var(--faint); margin-top: 4px; display: block; }
+
+/* ── Writing inline ───────────────────────────── */
+.pcr-writing-page {}
+
+.pcr-toc { margin-bottom: 72px; padding: 24px 0; border-top: 0.5px solid var(--rule); border-bottom: 0.5px solid var(--rule); }
+.pcr-toc summary { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); cursor: pointer; list-style: none; margin-bottom: 0; }
+.pcr-toc[open] summary { margin-bottom: 16px; }
+.pcr-toc-links a { display: block; font-size: 16px; color: var(--warm); text-decoration: none; margin-bottom: 8px; font-style: italic; }
+.pcr-toc-links a:hover { color: var(--ink); }
+
+.pcr-article { padding: 72px 0; border-bottom: 0.5px solid var(--rule); }
+.pcr-article:first-child { padding-top: 0; }
+.pcr-article:last-child { border-bottom: none; }
+
+.pcr-article-form { font-family: 'Libre Franklin', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 12px; }
+.pcr-article-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; font-weight: 400; line-height: 1.15; margin-bottom: 10px; letter-spacing: 0.01em; }
+.pcr-article-deck { font-style: italic; font-size: 18px; color: var(--warm); line-height: 1.55; margin-bottom: 6px; }
+.pcr-article-date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 44px; display: block; }
+.pcr-article-salutation { font-style: italic; font-size: 18px; color: var(--warm); margin-bottom: 1.5em; }
+.pcr-article-body p { margin-bottom: 1.5em; }
+.pcr-article-sign { margin-top: 2.4em; padding-top: 20px; border-top: 0.5px solid var(--rule); font-style: italic; color: var(--warm); }
+.pcr-article-sign p { margin-bottom: 2px; }
+
+/* ── Footer ───────────────────────────────────── */
+.pcr-footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--rule);
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+@media (max-width: 680px) {
+  .pcr-outer { padding: 0 24px 80px; }
+  .pcr-col { padding-top: 48px; }
+  .pcr-title { font-size: 28px; }
+}
+
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }

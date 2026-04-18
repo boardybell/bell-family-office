@@ -1,0 +1,106 @@
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+img, video { display: block; max-width: 100%; }
+button { cursor: pointer; border: none; background: none; }
+
+/* Font faces — all self-hosted WOFF2 */
+/* Source Serif 4 */
+/* Variant Toggle */
+.variant-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.variant-toggle__trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--paper, #F1ECE2);
+  color: var(--ink, #1C1C1B);
+  border: 1px solid currentColor;
+  opacity: 0.7;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  transition: opacity 200ms ease-out;
+}
+.variant-toggle__trigger:hover { opacity: 1; }
+.variant-toggle__panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--paper, #F1ECE2);
+  border: 1px solid var(--ink, #1C1C1B);
+  min-width: 240px;
+  padding: 12px 0;
+}
+.variant-toggle.is-open .variant-toggle__panel { display: block; }
+.variant-toggle__panel a {
+  display: block;
+  padding: 6px 16px;
+  color: var(--ink, #1C1C1B);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: opacity 200ms ease-out;
+  opacity: 0.6;
+}
+.variant-toggle__panel a:hover { opacity: 1; }
+.variant-toggle__panel a.is-current { opacity: 1; font-weight: 600; }
+.variant-toggle__divider { height: 1px; background: currentColor; opacity: 0.15; margin: 8px 0; }
+.variant-toggle__panel .index-link { font-size: 10px; opacity: 0.5; }
+
+/* Archive banner */
+.archive-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper, #F1ECE2);
+  border-bottom: 1px solid currentColor;
+  opacity: 0.75;
+  font-family: inherit;
+}
+.archive-banner a { color: inherit; }
+
+/* Lazy image fade */
+img.lazy { opacity: 0; transition: opacity 400ms ease-out; }
+img.lazy.loaded { opacity: 1; }
+
+/* Page load fade */
+@media (prefers-reduced-motion: no-preference) {
+  .page-content { animation: pageFadeIn 200ms ease-out both; }
+  @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* Scroll-reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .reveal.visible { opacity: 1; transform: none; }
+}
+
+/* Email links — accent color across all variants */
+a[href^="mailto"] {
+  color: var(--accent, #333);
+  text-underline-offset: 3px;
+}
+a[href^="mailto"]:hover { opacity: 0.7; }
+
+/* Utilities */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
