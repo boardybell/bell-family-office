@@ -253,7 +253,7 @@ a:hover { color: var(--accent); }
 .pch-contact { padding-top: 72px; max-width: 560px; }
 .pch-contact h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 40px; font-weight: 400; margin-bottom: 48px; }
 .pch-contact p { margin-bottom: 1.5em; color: var(--warm); font-size: 17px; }
-.pch-contact a { color: var(--accent); }
+.pch-contact a { color: var(--accent); overflow-wrap: anywhere; }
 
 /* ── Writing inline ───────────────────────────── */
 .pch-writing-page { padding-top: 72px; }
